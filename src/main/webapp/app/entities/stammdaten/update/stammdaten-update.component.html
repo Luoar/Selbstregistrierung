@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-stammdaten-heading"
+        data-cy="StammdatenCreateUpdateHeading"
+        jhiTranslate="selbstregistrierungApp.stammdaten.home.createOrEditLabel"
+      >
+        Create or edit a Stammdaten
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.stammdaten.anrede" for="field_anrede">Anrede</label>
+          <select class="form-control" name="anrede" formControlName="anrede" id="field_anrede" data-cy="anrede">
+            <option [ngValue]="null">{{ 'selbstregistrierungApp.Anrede.null' | translate }}</option>
+            <option *ngFor="let anrede of anredeValues" [value]="anrede">
+              {{ 'selbstregistrierungApp.Anrede.' + anrede | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.stammdaten.nachname" for="field_nachname">Nachname</label>
+          <input type="text" class="form-control" name="nachname" id="field_nachname" data-cy="nachname" formControlName="nachname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.stammdaten.vorname" for="field_vorname">Vorname</label>
+          <input type="text" class="form-control" name="vorname" id="field_vorname" data-cy="vorname" formControlName="vorname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.stammdaten.eMail" for="field_eMail">E Mail</label>
+          <input type="text" class="form-control" name="eMail" id="field_eMail" data-cy="eMail" formControlName="eMail" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.stammdaten.telefonMobile" for="field_telefonMobile"
+            >Telefon Mobile</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="telefonMobile"
+            id="field_telefonMobile"
+            data-cy="telefonMobile"
+            formControlName="telefonMobile"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

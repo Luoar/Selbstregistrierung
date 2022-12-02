@@ -1,0 +1,31 @@
+{
+  "selbstregistrierungApp": {
+    "adresse": {
+      "home": {
+        "title": "Adresses",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Adresse erstellen",
+        "createOrEditLabel": "Adresse erstellen oder bearbeiten",
+        "notFound": "Keine Adresses gefunden"
+      },
+      "created": "Adresse erstellt mit ID {{ param }}",
+      "updated": "Adresse aktualisiert mit ID {{ param }}",
+      "deleted": "Adresse gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Adresse {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Adresse"
+      },
+      "id": "ID",
+      "strasseUndNummer": "Strasse Und Nummer",
+      "adresszusatz": "Adresszusatz",
+      "postfach": "Postfach",
+      "telefonFix": "Telefon Fix",
+      "telefonGeschaeft": "Telefon Geschaeft",
+      "fax": "Fax",
+      "adresstyp": "Adresstyp",
+      "zdp": "Zdp"
+    }
+  }
+}

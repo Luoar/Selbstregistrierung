@@ -1,0 +1,26 @@
+{
+  "selbstregistrierungApp": {
+    "zDP": {
+      "home": {
+        "title": "ZDPS",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "ZDP erstellen",
+        "createOrEditLabel": "ZDP erstellen oder bearbeiten",
+        "notFound": "Keine ZDPS gefunden"
+      },
+      "created": "ZDP erstellt mit ID {{ param }}",
+      "updated": "ZDP aktualisiert mit ID {{ param }}",
+      "deleted": "ZDP gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll ZDP {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "ZDP"
+      },
+      "id": "ID",
+      "zdpNummer": "Zdp Nummer",
+      "stammdaten": "Stammdaten",
+      "adresse": "Adresse"
+    }
+  }
+}

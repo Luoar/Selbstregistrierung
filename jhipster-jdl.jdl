@@ -1,0 +1,38 @@
+
+entity ZDP {
+	ZdpNummer Integer
+}
+
+entity Stammdaten {
+	Anrede Anrede
+    Nachname String
+    Vorname String
+    EMail String
+    TelefonMobile String
+}
+
+entity Adresse{
+	StrasseUndNummer String
+    Adresszusatz String
+    Postfach String
+    TelefonFix String
+    TelefonGeschaeft String
+    Fax String
+    Adresstyp Adresstyp
+}
+
+enum Anrede {
+    Herr, Frau
+}
+
+enum Adresstyp {
+    Domizil, Korrespondenz
+}
+
+relationship OneToOne{
+	ZDP to Stammdaten
+}
+
+relationship OneToMany{
+	ZDP to Adresse{zdp}
+}

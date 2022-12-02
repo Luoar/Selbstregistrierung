@@ -48,6 +48,10 @@ public class CacheConfiguration {
             createCache(cm, ch.luoar.selbstregistrierung.domain.User.class.getName());
             createCache(cm, ch.luoar.selbstregistrierung.domain.Authority.class.getName());
             createCache(cm, ch.luoar.selbstregistrierung.domain.User.class.getName() + ".authorities");
+            createCache(cm, ch.luoar.selbstregistrierung.domain.ZDP.class.getName());
+            createCache(cm, ch.luoar.selbstregistrierung.domain.ZDP.class.getName() + ".adresses");
+            createCache(cm, ch.luoar.selbstregistrierung.domain.Stammdaten.class.getName());
+            createCache(cm, ch.luoar.selbstregistrierung.domain.Adresse.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

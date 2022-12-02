@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="adresse">
+      <h2 data-cy="adresseDetailsHeading"><span jhiTranslate="selbstregistrierungApp.adresse.detail.title">Adresse</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ adresse.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.strasseUndNummer">Strasse Und Nummer</span></dt>
+        <dd>
+          <span>{{ adresse.strasseUndNummer }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.adresszusatz">Adresszusatz</span></dt>
+        <dd>
+          <span>{{ adresse.adresszusatz }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.postfach">Postfach</span></dt>
+        <dd>
+          <span>{{ adresse.postfach }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.telefonFix">Telefon Fix</span></dt>
+        <dd>
+          <span>{{ adresse.telefonFix }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.telefonGeschaeft">Telefon Geschaeft</span></dt>
+        <dd>
+          <span>{{ adresse.telefonGeschaeft }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.fax">Fax</span></dt>
+        <dd>
+          <span>{{ adresse.fax }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.adresstyp">Adresstyp</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'selbstregistrierungApp.Adresstyp.' + adresse.adresstyp }}">{{ adresse.adresstyp }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.adresse.zdp">Zdp</span></dt>
+        <dd>
+          <div *ngIf="adresse.zdp">
+            <a [routerLink]="['/zdp', adresse.zdp.id, 'view']">{{ adresse.zdp.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/adresse', adresse.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="zDP">
+      <h2 data-cy="zDPDetailsHeading"><span jhiTranslate="selbstregistrierungApp.zDP.detail.title">ZDP</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ zDP.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.zDP.zdpNummer">Zdp Nummer</span></dt>
+        <dd>
+          <span>{{ zDP.zdpNummer }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.zDP.stammdaten">Stammdaten</span></dt>
+        <dd>
+          <div *ngIf="zDP.stammdaten">
+            <a [routerLink]="['/stammdaten', zDP.stammdaten.id, 'view']">{{ zDP.stammdaten.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/zdp', zDP.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

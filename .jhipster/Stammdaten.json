@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20221202130810",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "stammdaten",
+  "fields": [
+    {
+      "fieldName": "anrede",
+      "fieldType": "Anrede",
+      "fieldValues": "Herr,Frau"
+    },
+    {
+      "fieldName": "nachname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vorname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eMail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonMobile",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Stammdaten",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "zDP",
+      "otherEntityRelationshipName": "stammdaten",
+      "ownerSide": false,
+      "relationshipName": "zDP",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

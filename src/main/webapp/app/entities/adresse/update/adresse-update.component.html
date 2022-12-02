@@ -1,0 +1,118 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-adresse-heading"
+        data-cy="AdresseCreateUpdateHeading"
+        jhiTranslate="selbstregistrierungApp.adresse.home.createOrEditLabel"
+      >
+        Create or edit a Adresse
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.strasseUndNummer" for="field_strasseUndNummer"
+            >Strasse Und Nummer</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="strasseUndNummer"
+            id="field_strasseUndNummer"
+            data-cy="strasseUndNummer"
+            formControlName="strasseUndNummer"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.adresszusatz" for="field_adresszusatz">Adresszusatz</label>
+          <input
+            type="text"
+            class="form-control"
+            name="adresszusatz"
+            id="field_adresszusatz"
+            data-cy="adresszusatz"
+            formControlName="adresszusatz"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.postfach" for="field_postfach">Postfach</label>
+          <input type="text" class="form-control" name="postfach" id="field_postfach" data-cy="postfach" formControlName="postfach" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.telefonFix" for="field_telefonFix">Telefon Fix</label>
+          <input
+            type="text"
+            class="form-control"
+            name="telefonFix"
+            id="field_telefonFix"
+            data-cy="telefonFix"
+            formControlName="telefonFix"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.telefonGeschaeft" for="field_telefonGeschaeft"
+            >Telefon Geschaeft</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="telefonGeschaeft"
+            id="field_telefonGeschaeft"
+            data-cy="telefonGeschaeft"
+            formControlName="telefonGeschaeft"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.fax" for="field_fax">Fax</label>
+          <input type="text" class="form-control" name="fax" id="field_fax" data-cy="fax" formControlName="fax" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.adresstyp" for="field_adresstyp">Adresstyp</label>
+          <select class="form-control" name="adresstyp" formControlName="adresstyp" id="field_adresstyp" data-cy="adresstyp">
+            <option [ngValue]="null">{{ 'selbstregistrierungApp.Adresstyp.null' | translate }}</option>
+            <option *ngFor="let adresstyp of adresstypValues" [value]="adresstyp">
+              {{ 'selbstregistrierungApp.Adresstyp.' + adresstyp | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="selbstregistrierungApp.adresse.zdp" for="field_zdp">Zdp</label>
+          <select class="form-control" id="field_zdp" data-cy="zdp" name="zdp" formControlName="zdp" [compareWith]="compareZDP">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="zDPOption" *ngFor="let zDPOption of zDPSSharedCollection">{{ zDPOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

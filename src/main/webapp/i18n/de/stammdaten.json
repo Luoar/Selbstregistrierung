@@ -1,0 +1,29 @@
+{
+  "selbstregistrierungApp": {
+    "stammdaten": {
+      "home": {
+        "title": "Stammdatens",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Stammdaten erstellen",
+        "createOrEditLabel": "Stammdaten erstellen oder bearbeiten",
+        "notFound": "Keine Stammdatens gefunden"
+      },
+      "created": "Stammdaten erstellt mit ID {{ param }}",
+      "updated": "Stammdaten aktualisiert mit ID {{ param }}",
+      "deleted": "Stammdaten gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Stammdaten {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Stammdaten"
+      },
+      "id": "ID",
+      "anrede": "Anrede",
+      "nachname": "Nachname",
+      "vorname": "Vorname",
+      "eMail": "E Mail",
+      "telefonMobile": "Telefon Mobile",
+      "zDP": "Z DP"
+    }
+  }
+}

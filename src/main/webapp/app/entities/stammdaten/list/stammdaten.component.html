@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="StammdatenHeading">
+    <span jhiTranslate="selbstregistrierungApp.stammdaten.home.title">Stammdatens</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="selbstregistrierungApp.stammdaten.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-stammdaten"
+        [routerLink]="['/stammdaten/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="selbstregistrierungApp.stammdaten.home.createLabel"> Create a new Stammdaten </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="stammdatens?.length === 0">
+    <span jhiTranslate="selbstregistrierungApp.stammdaten.home.notFound">No Stammdatens found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="stammdatens && stammdatens.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="anrede">
+            <div class="d-flex">
+              <span jhiTranslate="selbstregistrierungApp.stammdaten.anrede">Anrede</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nachname">
+            <div class="d-flex">
+              <span jhiTranslate="selbstregistrierungApp.stammdaten.nachname">Nachname</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vorname">
+            <div class="d-flex">
+              <span jhiTranslate="selbstregistrierungApp.stammdaten.vorname">Vorname</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="eMail">
+            <div class="d-flex">
+              <span jhiTranslate="selbstregistrierungApp.stammdaten.eMail">E Mail</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="telefonMobile">
+            <div class="d-flex">
+              <span jhiTranslate="selbstregistrierungApp.stammdaten.telefonMobile">Telefon Mobile</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stammdaten of stammdatens; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/stammdaten', stammdaten.id, 'view']">{{ stammdaten.id }}</a>
+          </td>
+          <td jhiTranslate="{{ 'selbstregistrierungApp.Anrede.' + stammdaten.anrede }}">{{ stammdaten.anrede }}</td>
+          <td>{{ stammdaten.nachname }}</td>
+          <td>{{ stammdaten.vorname }}</td>
+          <td>{{ stammdaten.eMail }}</td>
+          <td>{{ stammdaten.telefonMobile }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/stammdaten', stammdaten.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/stammdaten', stammdaten.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(stammdaten)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

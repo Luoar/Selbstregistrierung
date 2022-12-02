@@ -1,0 +1,9 @@
+{
+  "selbstregistrierungApp": {
+    "Adresstyp": {
+      "null": "",
+      "Domizil": "Domizil",
+      "Korrespondenz": "Korrespondenz"
+    }
+  }
+}

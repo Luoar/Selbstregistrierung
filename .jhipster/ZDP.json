@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20221202130809",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "zdp",
+  "fields": [
+    {
+      "fieldName": "zdpNummer",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ZDP",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stammdaten",
+      "otherEntityRelationshipName": "zDP",
+      "ownerSide": true,
+      "relationshipName": "stammdaten",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "adresse",
+      "otherEntityRelationshipName": "zdp",
+      "relationshipName": "adresse",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

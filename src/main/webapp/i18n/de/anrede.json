@@ -1,0 +1,9 @@
+{
+  "selbstregistrierungApp": {
+    "Anrede": {
+      "null": "",
+      "Herr": "Herr",
+      "Frau": "Frau"
+    }
+  }
+}

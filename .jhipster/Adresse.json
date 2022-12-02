@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20221202130811",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "adresse",
+  "fields": [
+    {
+      "fieldName": "strasseUndNummer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresszusatz",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postfach",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonFix",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonGeschaeft",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresstyp",
+      "fieldType": "Adresstyp",
+      "fieldValues": "Domizil,Korrespondenz"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Adresse",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "zDP",
+      "otherEntityRelationshipName": "adresse",
+      "relationshipName": "zdp",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

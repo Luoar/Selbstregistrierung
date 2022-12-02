@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="stammdaten">
+      <h2 data-cy="stammdatenDetailsHeading"><span jhiTranslate="selbstregistrierungApp.stammdaten.detail.title">Stammdaten</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ stammdaten.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.stammdaten.anrede">Anrede</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'selbstregistrierungApp.Anrede.' + stammdaten.anrede }}">{{ stammdaten.anrede }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.stammdaten.nachname">Nachname</span></dt>
+        <dd>
+          <span>{{ stammdaten.nachname }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.stammdaten.vorname">Vorname</span></dt>
+        <dd>
+          <span>{{ stammdaten.vorname }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.stammdaten.eMail">E Mail</span></dt>
+        <dd>
+          <span>{{ stammdaten.eMail }}</span>
+        </dd>
+        <dt><span jhiTranslate="selbstregistrierungApp.stammdaten.telefonMobile">Telefon Mobile</span></dt>
+        <dd>
+          <span>{{ stammdaten.telefonMobile }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/stammdaten', stammdaten.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

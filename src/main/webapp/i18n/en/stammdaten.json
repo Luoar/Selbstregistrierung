@@ -1,0 +1,29 @@
+{
+  "selbstregistrierungApp": {
+    "stammdaten": {
+      "home": {
+        "title": "Stammdatens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Stammdaten",
+        "createOrEditLabel": "Create or edit a Stammdaten",
+        "notFound": "No Stammdatens found"
+      },
+      "created": "A new Stammdaten is created with identifier {{ param }}",
+      "updated": "A Stammdaten is updated with identifier {{ param }}",
+      "deleted": "A Stammdaten is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stammdaten {{ id }}?"
+      },
+      "detail": {
+        "title": "Stammdaten"
+      },
+      "id": "ID",
+      "anrede": "Anrede",
+      "nachname": "Nachname",
+      "vorname": "Vorname",
+      "eMail": "E Mail",
+      "telefonMobile": "Telefon Mobile",
+      "zDP": "Z DP"
+    }
+  }
+}
